@@ -1,0 +1,37 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Blog - Categorias{%endblock %}
+{% block content %}
+
+<h1>{{ cats }}</h1>
+
+	<ul>
+	{% for post in category_posts %}
+    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">                    
+        <div class="card card-small card-post card-post--1">                       
+          {% if post.image %}
+          <div class="card-post__image" style="background-image: url({{ post.image.url }})" height="100" width="150">
+            <div class="card-post__author d-flex">
+              {% if user.perfil.foto_perfil %}
+              <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url({{ user.perfil.foto_perfil.url }});">Written by {{ post.author.username}}</a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="text-fiord-blue" href="{% url 'publicaciones' post.pk %}">{{ post.title}}</a>
+            </h5>
+            <a href="{% url 'publicaciones' post.pk %}"> <p class="card-text d-inline-block mb-3">{{ post.resumen|safe }}</p> </a>
+            <span class="text-muted">{{post.post_date }}</span>
+          </div>                                            
+        </div>                                 
+    </div>
+	{% endfor %}
+	</ul>
+
+
+	<h2>Sorry this page does not exist...</h2>
+
+
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} Portfolio {% endblock %} 
+{% load crispy_forms_tags %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+{% block content %}
+
+<br>
+ <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+    {
+    "symbols": [
+      {
+        "proName": "FOREXCOM:SPXUSD",
+        "title": "S&P 500"
+      },
+      {
+        "proName": "FOREXCOM:NSXUSD",
+        "title": "Nasdaq 100"
+      },
+      {
+        "proName": "BITSTAMP:BTCUSD",
+        "title": "BTC/USD"
+      },
+      {
+        "proName": "BITSTAMP:ETHUSD",
+        "title": "ETH/USD"
+      },
+      {
+        "description": "APPL",
+        "proName": "NASDAQ:AAPL"
+      },
+      {
+        "description": "AMAZ",
+        "proName": "OTC:AMAZ"
+      },
+      {
+        "description": "AMZN",
+        "proName": "NASDAQ:AMZN"
+      },
+      {
+        "description": "RTX",
+        "proName": "NYSE:RTX"
+      }
+    ],
+    "showSymbolLogo": true,
+    "colorTheme": "light",
+    "isTransparent": false,
+    "displayMode": "adaptive",
+    "locale": "es"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+
+<div class="main-content-container container-fluid px-4">
+  <div class="main-content-container container-fluid px-4">
+        <!-- Page Header -->
+        <div class="page-header row no-gutters py-4">
+          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+            <span class="text-uppercase page-subtitle">Overview</span>
+            <h3 class="page-title">Portfolio</h3>
+          </div>
+        </div>
+        <!-- End Page Header -->
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+            <i class="fa fa-check mx-2"></i>
+            <strong>Enhorabuena!</strong> {{ message }}</div>
+          <div class="main-content-container container-fluid px-4">
+          {% endfor %}
+        </ul>
+      {% endif %}
+        <!-- TradingView Widget BEGIN -->
+        <center>
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>  
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-info.js" async>
+          {
+          "symbol": "{{ tckr }}",
+          "width": 1000,
+          "locale": "es",
+          "colorTheme": "light",
+          "isTransparent": false
+        }
+          </script>
+        </div>
+        </center>
+        <br>
+<!-- TradingView Widget END -->
+        
+        <!-- Default Light Table -->
+        <div class="row">
+          <div class="col-lg-5.1">
+            <div class="card-header border-bottom"> 
+              <center>         
+            <form method="post">
+              {% csrf_token %}
+              <label>
+                <input name="ticker" id="ticker" autocomplete="name" maxlength="10" placeholder="Introducir ticker...">
+              </label>
+              <button class="btn btn-outline-warning">Buscar</button>
+            </form>
+              </center>  
+            </div>          
+              <!-- TradingView Widget BEGIN -->
+              <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-financials.js" async>
+                  
+                  {
+                  "symbol": "{{ tckr }}" ,
+                  "colorTheme": "light",
+                  "isTransparent": false,
+                  "largeChartUrl": "",
+                  "displayMode": "regular",
+                  "width": 480,
+                  "height": 830,
+                  "locale": "es"
+              }
+                  </script>
+              </div>
+          </div>
+          
+          <div class="col-xl">
+            <div class="card card-small">
+              <div class="card-header border-bottom">
+                <h6 class="m-0">Top Referrals</h6>
+              </div>
+              <div class="card-body p-0 text-center">                
+                <table class="table table-bordered">
+                  <thead class="bg-light">
+                    <tr>
+                      <th scope="col" >Activo</th>
+                      <th scope="col" >Rendimiento</th>                      
+                      <th scope="col" >Cantidad</th>
+                      <th scope="col" >Valor</th>
+                    </tr>
+                  </thead>
+                  {% for activo in activos_cartera %}
+                  <tbody>                    
+                    <tr>                  
+                      <td scope="row"><label><span data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="{{ activo.observacion }}">{{ activo.nombre_activo }}</span></label></td> 
+                      <td scope="row"><label>{{ activo.rendimiento }} %</label></td>
+                      <td scope="row"><label>{{ activo.cantidad }}</label></td>
+                      <td scope="row"><label>{{ activo.valor_total }} $</label></td>                                       
+                    </tr>
+                  {% endfor %}                    
+                  </tbody>
+                </table>                
+              </div>
+              <div class="card-footer border-top">
+                <div class="row">
+                  <div class="col">
+                    <center>
+                    <a class="btn btn-primary" href="{% url 'modifportfolio' %}">Portfolio completo</a>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <!-- End Default Light Table -->
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+{% endblock javascripts %}

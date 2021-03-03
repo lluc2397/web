@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Asesoramiento{%endblock %}
+{% block meta_description %}A cambio de nuestra invaluable ayuda te pedimos una cooperación{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/33.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h1 class="title">Asesorías & Consultas</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Inicio</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'service' %}"></i> Servicios</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Asesoramiento & Consultas</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ****** About Us Area Start ******* -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>Asesorías & Consultas Patrimoniales</h2>
+              <div class="line"></div>
+            </div>
+            <p>Sabemos que trabajas mucho, incluso demasiado. Pero eso está muy bien. Trabajar duro es el primer paso para amasar una fortuna y crear un buen patrimonio. Sin embargo la parte de organización y la gestión del dinero es igual o más importante. Somos conscientes de que las obligaciones toman mucho tiempo. Por eso queremos ayudarte a aprender a gestionar tu dinero para que no se convierta en una tarea tediosa a la que no le puedes dedicar el tiempo necesario.
+              Ya sea para resolverte una duda puntual o para acompañarte el tiempo que necesites aquí estamos. Te asesoraremos para que puedas marcarte objetivos y te propocionaremos todas las herramientas y saber que necesitas para, no solo cumplirlos, si no sobrepasarlos con creces.
+            </p>
+          
+            <!-- ***** Dento Pricing Table Area Start ***** -->
+      <br>
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">PRODUCTOS OFRECIDOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <tr>
+                    <th scope="row">Consulta puntual</th>
+                    <td>Análisis de los últimos 10 años de la empresa solicitada. Perfecto para reconocer la calidad de la empresa. </td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Asesoramiento mensual</th>
+                    <td>Una concisa investigación de los últimos 20 años para reconocer la calidad de la empresa.</td>
+                    <td>10$</td>
+                  </tr>
+                <thead>
+                  <tr>
+                    <th scope="col">SERVICIOS OFRECIDOS :</th>
+                    <th scope="col">INFORMACIÓN</th>
+                    <th scope="col">PRECIOS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Asesoría trimestral</th>
+                    <td>Efectuamos la compra y la venta de los activos digitales que nos indiques.</td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Asesoría Premium</th>
+                    <td>Análisis de los últimos 10 años de la empresa solicitada. Perfecto para reconocer la calidad de la empresa. </td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Asesoramiento Superior Personalizado</th>
+                    <td>Una concisa investigación de los últimos 20 años para reconocer la calidad de la empresa.</td>
+                    <td>10$</td>
+                  </tr>                
+                <tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'appointment' %}" class="btn dento-btn">Pidelo Ya <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} Taller {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="main-content-container container-fluid px-4">
+  <div class="main-content-container container-fluid px-4">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-4">
+        <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+          <span class="text page-subtitle">Regresar al</span>
+          <h3 class="page-title"><a href="{% url 'Curso' modulo.curso_relacionado %}">{{modulo.curso_relacionado}}</a></h3>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="section-heading text-center white">
+            <h1><strong>{{modulo.nombre_modulo}}</strong></h1>
+        <div class="line"></div>
+      </div>
+      <!-- End Page Header --> 
+    </div>
+    {{modulo.contenido_modulo|safe}}
+  </div>
+</div>
+
+
+
+  
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

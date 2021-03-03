@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} Talleres {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="main-content-container container-fluid px-4">
+  <div class="main-content-container container-fluid px-4">
+      <!-- Page Header -->
+      <div class="page-header row no-gutters py-4">
+        <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+          <span class="text-uppercase page-subtitle">Talleres</span>
+          <h3 class="page-title">Talleres Disponibles</h3>
+        </div>
+      </div>
+      <!-- End Page Header -->    
+      
+        <div class="row">
+        {% for post in object_list %}
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+            <div class="card card-small card-post h-100">
+            {% if post.image %}
+            <div class="card-post__image" style="background-image: url({{ post.image.url }})"></div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">
+                <a class="text-fiord-blue" href="{% url 'Taller' post.pk %}">{{ post.titulo}}</a>
+                </h5>
+                <p class="card-text">{{ post.resumen | safe}}</p>
+            </div>
+            <div class="card-footer text-muted border-top py-3">
+                <span class="d-inline-block">
+                <a class="text-fiord-blue" href="#">{{ post.genero}}</a> <br>
+                <a class="text-fiord-blue" href="#">{{ post.fecha_publicacion }}</a>
+                </span>
+            </div>
+            </div>
+        </div>
+        {% endfor %} 
+        </div>
+    </div>
+</div>
+  
+    
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

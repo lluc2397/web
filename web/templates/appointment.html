@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Set an Appoinment to See Dr. Elder{%endblock %}
+{% block meta_description %}Appointment{% endblock %}
+
+{% block content %}
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/buenasinversiones.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Citas</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Citas</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+  
+
+
+  <!-- ***** Contact Area Start ***** -->
+ 
+ <center>
+  {% if your_name %}
+    <center>
+      <h2>Gracias {{ your_name }}!</h2>
+      <p>Hemos recibido su correo, le contestaremos en la mayor brevedad...</p>
+    </center>
+    <br/><br/><br/>
+  {% else %}
+  <div class="container">
+    <div class="row">
+      <!-- Section Heading -->
+      <div class="col-12">
+        <div class="section-heading text-center white">
+          <h2>Pide nuestros servicios</h2>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Appointment Form -->
+        <div class="appointment-form">
+          <form action="{% url 'appointment' %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <input type="text" name="your-name" class="form-control" placeholder="Nombre" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <input type="text" name="your-phone" class="form-control" placeholder="Teléfono" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <input type="email" name="your-email" class="form-control" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <input type="text" name="your-country" class="form-control" placeholder="País">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <select name="your-service" class="form-control">
+                    <option value="Servicios Financieros">Servicio deseado</option>
+                    <option value="Curso financiero">Cursos</option>
+                    <option value="Taller financiero">Talleres</option>
+                    <option value="Campus finanzas personales">Campus del inversor inteligente</option>
+                    <option value="Asesoramiento financiero">Asesoramiento</option>
+                    <option value="Análisis fundamental de empresas">Análisis de empresas</option>
+                    <option value="Consulta financiera">Consultas</option>
+                    <option value="Activos Digitales">Activos Digitales</option>
+                    <option value="Otro servicio financiero">Otro (Especificar en el mensaje)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-30">
+                  <select name="your-payment" class="form-control">
+                    <option value="Método de pago">Métodos de pago</option>
+                    <option value="Un solo pago">Un solo pago</option>
+                    <option value="Mensual">Mensual</option>
+                    <option value="Anual">Anual</option>
+                    <option value="Otra modalidad">Otra (Especificar en el mensaje)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group mb-30">
+                  <textarea name="your-message" class="form-control" placeholder="Tú mensaje"></textarea>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn dento-btn">ENVIAR</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  </section>
+</center>
+<br/><br/><br/><br/>
+  <!-- ***** Contact Area End ***** -->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

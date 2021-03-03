@@ -1,0 +1,55 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} Blog Posts {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="main-content-container container-fluid px-4">
+  <div class="main-content-container container-fluid px-4">
+      <!-- Page Header -->
+    <div class="page-header row no-gutters py-4">
+      <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+        <span class="text-uppercase page-subtitle">Components</span>
+        <h3 class="page-title">Blog Posts</h3>
+      </div>
+    </div>
+    <!-- End Page Header -->
+
+    <div class="row">
+      {% for post in object_list %}                   
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">                    
+        <div class="card card-small card-post card-post--1">                       
+          {% if post.image %}
+          <div class="card-post__image" style="background-image: url({{ post.image.url }})" height="100" width="150">
+            <a href="#" class="card-post__category badge badge-pill badge-info">{{ post.categoria}}</a>
+            <div class="card-post__author d-flex">
+              {% if user.perfil.foto_perfil %}
+              <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url({{ user.perfil.foto_perfil.url }});">Written by {{ post.author.username}}</a>
+              {% endif %}
+            </div>
+          </div>
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">
+              <a class="text-fiord-blue" href="{% url 'publicaciones' post.pk %}">{{ post.title}}</a>
+            </h5>
+            <a href="{% url 'publicaciones' post.pk %}"> <p class="card-text d-inline-block mb-3">{{ post.resumen|safe }}</p> </a>
+            <span class="text-muted">{{post.post_date |naturaltime}}</span>
+          </div>                                            
+        </div>                                 
+      </div>   
+      {% endfor %}
+    </div>      
+  </div>
+</div>
+  
+    
+    
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

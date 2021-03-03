@@ -1,0 +1,64 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Blog{%endblock %}
+{% block content %}
+    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/inversionesrentables.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                <h2 class="title">Blog</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="breadcumb--con">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </nav>
+                    </div>    
+                </div>
+            <div class="col-12">
+                <div class="section-heading text-center white">
+                    <h1><strong>Blog</strong></h1>
+                <div class="line"></div>
+            </div>             
+            <ul>
+            <div class="row" >
+                {% for post in object_list %}                   
+                <div class="col-lg-3 col-md-6 col-sm-12 mb-4">                    
+                  <div class="card card-small card-post card-post--1">                       
+                    {% if post.image %}
+                    <div class="card-post__image" style="background-image: url({{ post.image.url }})" height="100" width="150">
+                      <a href="#" class="card-post__category badge badge-pill badge-info">{{ post.categoria}}</a>
+                      <div class="card-post__author d-flex">
+                        {% if user.perfil.foto_perfil %}
+                        <a href="#" class="card-post__author-avatar card-post__author-avatar--small" style="background-image: url({{ user.perfil.foto_perfil.url }});">Written by {{ post.author.username}}</a>
+                        {% endif %}
+                      </div>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        <a class="text-fiord-blue" href="{% url 'publicaciones' post.slug %}">{{ post.title}}</a>
+                      </h5>
+                      <a href="{% url 'publicaciones' post.slug %}"> <p class="card-text d-inline-block mb-3">{{ post.resumen|safe }}</p> </a>
+                      <span class="text-muted">{{post.post_date }}</span>
+                    </div>                                            
+                  </div>                                 
+                </div>   
+                {% endfor %} 
+            </ul> 
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+

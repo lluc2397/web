@@ -1,0 +1,169 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} Portfolio {% endblock %} 
+{% load crispy_forms_tags %}
+
+{% block stylesheets %}
+{% endblock stylesheets %}
+{% block content %}
+
+<div class="main-content-container container-fluid px-4">
+    <div class="main-content-container container-fluid px-4">
+          <!-- Page Header -->
+          <div class="page-header row no-gutters py-4">
+            <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+              <span class="text-uppercase page-subtitle">Portfolio</span>
+              <h3 class="page-title">Portfolio Completo</h3>
+            </div>
+          </div>
+          <!-- End Page Header -->
+          {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <i class="fa fa-check mx-2"></i>
+              <strong>Enhorabuena!</strong> {{ message }}</div>
+            <div class="main-content-container container-fluid px-4">
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <div class="col-xl">
+            <div class="card card-small">
+              <div class="card-header border-bottom">
+                <h6 class="m-0">Top Referrals</h6>
+              </div>
+              <div class="card-body p-0 text-center">                
+                <table class="table table-bordered">
+                  <thead class="bg-light">
+                    <tr>
+                      <th scope="col" >Activo</th>
+                      <th scope="col" >Rendimiento</th>                      
+                      <th scope="col" >Cantidad</th>
+                      <th scope="col" >Valor unitario</th>
+                    </tr>
+                  </thead>
+                  {% for activo in activos_cartera %}
+                  <tbody>                    
+                    <tr>                  
+                      <td scope="row"><label><span data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="{{ activo.observacion }}">{{ activo.nombre_activo }}</span></label></td> 
+                      <td scope="row"><label>{{ activo.rendimiento }} %</label></td>
+                      <td scope="row"><label>{{ activo.cantidad }}</label></td>
+                      <td scope="row"><label>{{ activo.valor }} $</label></td>                                       
+                    </tr>
+                  {% endfor %}                    
+                  </tbody>
+                </table>                
+              </div>
+              <div class="card-footer border-top">
+                <div class="row">
+                  <div class="col">
+                    <center>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                        Añadir activo
+                      </button>
+                    </center>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>            
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="card-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Añadir activo a tu cartera<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+                      </div>
+                      <div class="modal-body">
+                        <form method="POST" action="">
+                          {% csrf_token %}
+                          <div class="form-row">
+                            <div class="form-row">
+                              <div class="form-group col-md-4">
+                                {{carteraform.activo|as_crispy_field}}
+                              </div>
+                              <div class="form-group col-md-6"> 
+                                {{carteraform.nombre_activo|as_crispy_field}}
+                              </div>
+                              <div class="form-group col-md-2">
+                                {{carteraform.ticker_accion|as_crispy_field}} 
+                              </div>
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                {{carteraform.valor|as_crispy_field}}  
+                              </div>
+                              <div class="form-group col-md-4">
+                                {{carteraform.rendimiento|as_crispy_field}} 
+                              </div>                              
+                              <div class="form-group col-md-2">
+                                {{carteraform.cantidad|as_crispy_field}}  
+                              </div>
+                            </div>                       
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                                {{carteraform.movimiento|as_crispy_field}}
+                            </div>
+                            <div class="form-group col-md-6" placeholder="DD/MM/AAAA">
+                              {{carteraform.fecha_movimiento|as_crispy_field}} 
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-12">
+                              {{carteraform.observacion|as_crispy_field}}
+                            </div>
+                          </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalCenter">
+                              <span data-toggle="tooltip" data-placement="top" data-html="true" title="" data-original-title="Añade un activo que no se encuentra disponible en la lista de activos">Crear activo</span></button> 
+                            <button type="submit" class="btn btn-primary">Guardar activo en tu cartera</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="card-header">
+                        <h5 class="modal-title" id="ModalLongTitle">Crear nuevo activo<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></h5>
+                      </div>
+                      <div class="modal-body">
+                        <form method="POST" action="">
+                          {% csrf_token %}
+                            <div class="form-group">
+                              {{agractform.nombre|as_crispy_field}} 
+                            </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Añadir activo</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Default Light Table -->
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+{% endblock javascripts %}

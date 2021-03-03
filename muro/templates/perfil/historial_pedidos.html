@@ -1,0 +1,70 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block title %} Biblioteca {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="main-content-container container-fluid px-4">
+        <!-- Page Header -->
+        <div class="page-header row no-gutters py-4">
+          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+            <span class="text-uppercase page-subtitle">Overview</span>
+            <h3 class="page-title">Historial</h3>
+          </div>
+        </div>
+        <!-- End Page Header -->
+        <!-- Default Light Table -->
+        <div class="row">
+          <div class="col">
+            <div class="card card-small overflow-hidden mb-4">
+              <div class="card-header border-bottom">
+                <h6 class="m-0">Compras efectuadas</h6>
+              </div>
+              <div class="card-body p-0 pb-3 bg-dark text-center">
+                <table class="table table-dark mb-0">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col" class="border-0"><strong>Pedido</strong></th>
+                      <th scope="col" class="border-0"><strong>Fecha</strong></th>
+                      <th scope="col" class="border-0"><strong>Método de pago</strong></th>
+                      <th scope="col" class="border-0"><strong>Cantidad</strong></th>
+                      <th scope="col" class="border-0"><strong>Precio</strong></th>
+                    </tr>
+                  </thead>
+                {% for pedido in pedidos %}
+                  {% if pedido.serv_pedido %}                  
+                  <tbody>                    
+                    <tr>                      
+                      <td>{{ pedido.serv_pedido }}</td>                     
+                      <td>{{ pedido.fecha_pedido }}</a></td>
+                      <td>{{ pedido.metodo_pago }}</td>
+                      <td>{{ pedido.cantidad }}</td>
+                      <td>{{ pedido.price}}</td>                        
+                    </tr>
+                  {% else %}
+                  <tbody>                    
+                    <tr>                                          
+                      <td>{{ pedido.prod_pedido }}</td>                      
+                      <td>{{ pedido.fecha_pedido }}</a></td>
+                      <td>{{ pedido.metodo_pago }}</td>
+                      <td>{{ pedido.cantidad }}</td>
+                      <td>{{ pedido.price}}</td>                        
+                    </tr>
+                  {% endif %}
+                {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Default Light Table -->
+    </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

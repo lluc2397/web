@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Precios{%endblock %}
+{% block meta_description %}A cambio de nuestra invaluable ayuda te pedimos una cooperación{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/33.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Nuestros Precios</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'service' %}"></i> Servicios</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Precios</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Dento Pricing Table Area Start ***** -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">PRODUCTOS OFRECIDOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS USD / MXN</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Análisis de una empresa (Registros financieros de 10 años)</th>
+                  <td>Análisis de los últimos 10 años de la empresa solicitada. Perfecto para reconocer la calidad de la empresa. </td>
+                  <td>5$USD / $110MXN<br/></td>
+                </tr>
+                <tr>
+                  <th scope="row">Análisis de una empresa (Registros financieros de 20 años)</th>
+                  <td>Una concisa investigación de los últimos 20 años para reconocer la calidad de la empresa.</td>
+                  <td>10$USD / $220 MXN </td>
+                </tr>
+                <tr>
+                  <th scope="row">Análisis de una empresa (Con valor intrínseco)</th>
+                  <td>Exhaustivo estudio de los pasados 10 años de la empresa. Conocer el valor intrínseco es idóneo para discernir una buena inversión.</td>
+                  <td>30$USD/ 660MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Curso Inicial : Cómo enderezar tus finanzas</th>
+                  <td>Curso inicial para empezar a poner su vida financiera por buen camino. Viene de regalo con todas las herramientas que necesitarás.</td>
+                  <td>25$USD / MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Consulta punctual</th>
+                  <td>Una consulta de 1 hora para resolver todas las dudas que puedas tener.</td>
+                  <td>50$USD / MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Curso Individual</th>
+                  <td>Curso a la carta</td>
+                  <td>25$USD / MXN</td>
+                </tr>
+              <thead>
+                  <tr>
+                    <th scope="col">PRODUCTOS OFRECIDOS :</th>
+                    <th scope="col">INFORMACIÓN</th>
+                    <th scope="col">PRECIOS  USD / MXN</th>
+                  </tr>
+              </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">Campus</th>
+                  <td>Todos los cursos disponibles, presentes y futuros incluidos. Con acceso a la selecta comunidad de inversores.</td>
+                  <td>Mensualidad 25$ /
+                      Anualidad  250$               </td>
+                </tr>
+                
+                <tr>
+                  <th scope="row">Asesoramiento personalizado para mejorar las aptitudes financieras (Inicial)</th>
+                  <td>Un mes de acompañamiento para empezar a enderezar sus finanzas.</td>
+                  <td>60$USD / MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Asesoramiento personalizado para mejorar las aptitudes financieras (Intermedio)</th>
+                  <td>Tres meses contigo, a tu lado, ayudándote a conseguir tus metas financieras.</td>
+                  <td>Mensualidad 50$USD / MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Asesoramiento personalizado para mejorar las aptitudes financieras (Élite)</th>
+                  <td>Todo lo que necesitas saber para manejar tus finanzas a la perfección. Seis meses asesorándote para establecer y cumplir cada uno de tus objetivos.</td>
+                  <td>Mensualidad 45$USD / MXN</td>
+                </tr>
+                <tr>
+                  <th scope="row">Subscripción análisis de empresas (Básico)</th>
+                  <td>Exhaustivo estudio de 5 empresas. 100 años de información financiera recopilada y ordenada. Idóneo para conocer a fondo el sector y sus empresas.</td>
+                  <td>Mensualidad 30$USD / MXN</td>
+                </tr>                
+                <tr>
+                  <th scope="row">Subscripción análisis de empresas (Premium)</th>
+                  <td>Exhaustivo estudio de los pasados 10 años de 4 empresas. Toda la información necesaria, como su valor intrínseco, para reconocer una buena inversión.</td>
+                  <td>Mensualidad 100$USD / MXN</td>
+                </tr>
+                <tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'appointment' %}" class="btn dento-btn">Pidelo Ya <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+      <a>Métodos de pago acceptados : Transferencia bancaria o pago en criptomonedas </a>    
+    </div>  
+  </section>
+  <!-- ***** Dento Pricing Table Area End ***** -->
+
+  
+
+
+{% endblock %}

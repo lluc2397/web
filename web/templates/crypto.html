@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}La historia de Inversiones & Finanzas{%endblock %}
+{% block meta_description %}Esta es la página web de Inversiones y Finanzas{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image:url('{% static 'website/img/bg-img/33.jpg' %}');">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h1 class="title">Activos Digitales</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Inicio</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'service' %}"></i> Servicios</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Activos Digitales</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+ 
+  <!-- ****** About Us Area Start ******* -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>Activos Digitales</h2>
+              <div class="line"></div>
+            </div>
+            <p>El mundo de los activos digitales es muy jóven comparado con el resto de activos más tradicionales como pueden ser las acciones o los bienes y raices. Sin embargo en este corto periodo han tenido un gran auge, principalmente debido a las nuevas generaciones. 
+               En Inversiones & Finanzas contamos con más de 4 años de experiencia en el hámbito de las criptomonedas. Gracias a nuestro saber hacer te ayudaremos a </p>
+          
+            <!-- ***** Dento Pricing Table Area Start ***** -->
+      <br>
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">SERVICIOS OFRECIDOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Gestión de activos digitales</th>
+                  <td>Efectuamos la compra y la venta de los activos digitales que nos indiques.</td>
+                  <td>5$</td>
+                </tr>
+                <tr>
+                  <th scope="row">Custodia de activos digitales</th>
+                  <td>Ofrecemos un servicio de custodia de tus activos digitales. No te arriesgues en dejarlo en una billetera cualquiera, con nuestras hardwallets tus activos están un 99.9% seguros.</td>
+                  <td>10$</td>
+                </tr>                
+                <tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'appointment' %}" class="btn dento-btn">Pidelo Ya <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hola {{ user.username }},
+
+Tu cuenta ha sido creada exitosamente. Estamos emocionados por conocer tus comentarios. Clica en el enlace para entrar en tu perfil.
+
+http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}

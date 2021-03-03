@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load humanize %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - {{post.title}} {%endblock %}
+{% block content %}
+
+<head>
+    <!-- reference your installed Font Awesome Free package's files here -->
+    <link href="{% static 'fontawesome_free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    
+</head>
+
+<style>
+    .user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #f5f8f8;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+</style>
+
+</div>
+    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/inversionesrentables.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <h2 class="title">Publicaciones</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="breadcumb--con">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'blog' %}"></i> Blog</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{post.title}} </li>
+                            </ol>
+                        </nav>
+                    </div>    
+                </div>
+            <div class="col-12">
+                <div class="section-heading text-center white">
+                    <h1><strong>{{post.title}}</strong></h1>
+                <div class="line"></div>
+            </div>
+            <div class="main ng-scope" ng-if="!generator.isLastStep()" >
+                <h2<small>By: {{post.author.first_name}} - {{post.post_date}}</small></h2><br/>
+                <div class="article" id="intro" > 
+                    <center>
+                    {% if post.image %}
+		                <img  src="{{ post.image.url }} " width="350" >
+                    {% endif %}
+                    </center> 
+                    <br>
+                    <br>                   
+                    <p style="text-align: justify;">{{post.body|safe }}</p>                    
+                </div>
+                
+                <p class="card-text">
+                    {{ post.author.username }}
+                </p>
+            </div>
+        </div>
+        <hr>
+        <br/>
+        <form action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
+        
+        {% if user.is_authenticated %}
+            {% if liked %}
+            <p class="col-8">  <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-danger btn-sm">Unlike</button> - {{ total_likes }} Likes </p>
+            {% else %}	
+            <p class="col-8">  <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Like</button>  - {{ total_likes }} Likes </p>
+            {% endif %}
+    
+        {% else %}
+        <h5 class="white-important mb-3 col-8">
+            {{ total_likes }} Likes
+        </h5>
+
+           <p class="col-8"> <strong> <a href="{% url 'register' %}">Crea tu usuario</a></strong> para comentar e interactura con la comunidad.</p>
+        {% endif %}    
+        </form>
+        
+        <li class="social-media">
+            Compártelo a tus amigos
+            <div class="menu ">
+                
+                <div class="btn trigger"><i class="fa fa-share-alt "></i></div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="#"  ><i class="fab fa-reddit fa-lg"></i></a></div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://www.facebook.com/sharer/sharer.php?u=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-facebook fa-lg"></i></a></div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://plus.google.com/share?url=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-google-plus fa-lg"></i></a></div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://twitter.com/intent/tweet?text=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-twitter fa-lg"></i></a></div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://www.linkedin.com/shareArticle?url=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a></div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="http://tumblr.com/widgets/share/tool?canonicalUrl=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-tumblr fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://api.whatsapp.com/send?text=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}" target="_blank"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="rotater">
+                    <div class="btn btn-icon"><a href="https://pinterest.com/pin/create/button/?url=http://127.0.0.1:8000{% url 'publicaciones' post.slug %}&media=&description=" target="_blank"><i class="fab fa-pinterest fa-lg"></i></a>
+                    </div>
+                </div>
+        
+            </div>
+        </li>
+        <hr>
+        
+        <div class="row pl-3">
+            <div class="col-12 col-md-6 pl-0">
+             <h3 class="white-important mb-3 col-8">
+                 Sección de comentarios
+             </h3>
+            {% for comment in comments %}
+            
+                <article class="media content-section col-8">
+                    <div class="user_card">                        
+                        <span class="stats-small__label text-uppercase"> <strong>{{ comment.author.username }} </strong> - <small>{{ comment.date_posted |naturaltime}}</small> </span>
+                        {{ comment.content }}
+                        <br>
+                    </div>
+                </article>
+            {% endfor %}
+            </div>
+            {% if user.is_authenticated %}
+                <div class="col-12 col-md-6 pl-0 pl-md-3 pr-3">
+                    <h3 class="white-important mb-3">
+                        Comparte tu opinión
+                    </h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <textarea class="form-control" {{ form.content }} ></textarea>
+                        <div class="form-group">
+                            <button class="btn btn-outline-primary" type="submit">Comentar</button>
+                        </div>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+       
+{% endblock %}

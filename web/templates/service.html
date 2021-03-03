@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Servicios{%endblock %}
+{% block meta_description %}Dinos cómo podemos ayudarte en Inversiones & Finanzas{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/33.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Servicios</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Servicios</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ***** Services Area Start ***** -->
+  <section class="dento-services-area mt-50 mb-50">
+    <div class="container">
+      <div class="row">
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/asesor_financiero.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'asesoramiento' %}">Asesoramiento Personalizado</a></li></h5>
+            <p>Te ayudamos a enderezar tus finanzas y a convertirte en el mejor inversor.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/cursos_finanzas.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'cursos' %}">Campus del Inversor Inteligente</a></li></h5>
+            <p>Sé parte de la mejor comunidad de inversores. Únete al campus para adquirir conocimientos, compartirlos y encontrar las mejores inversiones.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/analisis_de_empresas.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'analisis' %}">Análisis de empresas</a></li></h5>
+            <p>Pide el análisis de la empresa que desees y obtén toda la información que necesitas antes de invertir. Conoce el valor intrínseco o pregunta por los paquetes para tener más de 100 años de información financiera.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/activos_digitales.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'cursos' %}">Activos Digitales</a></li></h5>
+            <p>Compra y custodia de activos digitales. Te interesan estos intrepidantes activos pero no sabes por dónde empezar. Nosotros nos ocupamos de todo.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/consultor_financiero.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'cursos' %}">Consultas Punctuales</a></li></h5>
+            <p>¿Tienes alguna duda? ¿Ya tienes experiencia pero necesitas una segunda opinión? Acude a nosotros, te ayudaremos con cualquier inconveniente que tengas.</p>
+          </div>
+        </div>
+
+        <!-- Single Service Area -->
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="single-service--area text-center mb-50">
+            <div class="icon--">
+              <img src="{% static 'website/img/core-img/curso_inversion.png' %}" alt="">
+            </div>
+            <h5><li><a href="{% url 'cursos' %}">Cursos</a></li></h5>
+            <p>Si quieres aprender sobre: finanzas, inversiones, economía o finanzas personales. Los mejores cursos a un solo click.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ***** Services Area End ***** -->
+
+  <!-- ***** Testimonials Area Start ***** -->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/lasmejoresinversiones.jpg' %}');">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonials Slides -->
+          <div class="testimonials-slides owl-carousel">
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/Peter_Lynch.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“Se puede perder dinero a corto plazo, pero necesitas del largo plazo para ganar dinero.”</h5>
+                <h6>Peter Lynch</h6>
+                <p></p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/Benjamin_Graham.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“Quien invierta en acciones no debería estar demasiado preocupado por las erráticas fluctuaciones en los precios del valor, puesto que a corto plazo el mercado de acciones se comporta como una máquina de votar, pero a largo plazo actúa como una báscula.”</h5>
+                <h6>Benjamin Graham</h6>
+                <p></p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/Warrent_Buffet.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“Regla número 1: nunca pierdas dinero. Regla número 2: nunca olvides la regla número 1.”</h5>
+                <h6>Warren Buffett</h6>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Testimonials Area End ***** -->
+
+  <!-- ***** Blog Area Start ***** -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">SERVICIOS & PRODUCTOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><li><a href="{% url 'cursos' %}">Campus del inversor inteligetne</a></li></th>
+                  <td>El mejor y más completo campus para los mejores inversores. Encontrarás oportunidades únicas que no puedes dejar pasar.</td>
+                  <td>En Renovación</td>
+                </tr>
+                <tr>
+                  <th scope="row"><li><a href="{% url 'asesoramiento' %}">Asesoramiento personalizado</a></li></th>
+                  <td>Te aportamos todo lo que necesitas para establecer y lograr todas las metas financieras que te propongas. Desde aprender a invertir hasta ganar más de un millón.</td>
+                  <td>Pago mensual</td>
+                </tr>
+                <tr>
+                  <th scope="row"><li><a href="{% url 'analisis' %}">Análisis de empresas</a></li></th>
+                  <td>Los mejores y más exhaustivos diagnósticos empresariales. Más de 100 años de información selecta sobre todas las empresas.</td>
+                  <td>Pagos punctuales o menusales</td>
+                </tr>
+                <tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'pricing' %}" class="btn dento-btn">Nuestros Precios <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Blog Area End ***** -->
+
+  
+
+
+{% endblock %}

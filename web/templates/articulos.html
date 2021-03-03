@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Artículos{%endblock %}
+{% block content %}
+    <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/inversionesrentables.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                <h2 class="title">Nuestros Artículos</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="breadcumb--con">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="{% url 'blog' %}"></i>Blog</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Artículos</li>
+                            </ol>
+                        </nav>
+                    </div>    
+                </div>
+            <div class="col-12">
+                <div class="section-heading text-center white">
+                    <h1><strong>Artículos</strong></h1>
+                <div class="line"></div>
+            </div>             
+            <ul>
+            {% for post in object_list %}            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="single-blog-item mb-100">
+                  <a href="">
+                    <img src="{% static 'website/img/bg-img/4.jpg' %}" alt="">
+                  </a>
+                  <!-- Blog Content -->
+                  <div class="blog-content">
+                    <a href="{% url 'publicaciones' post.pk %}" class="post-title">{{ post.title}}</a>
+                    <p><small> - {{ post.author.first_name}} {{ post.author.last_name}}</small> <br/>  
+                        {{ post.body|safe  }}</li>  </p>
+                    <div class="post-meta">
+                      <a href="#"><i class="icon_clock_alt"></i> {{post.post_date}}</a>
+                      <a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            {% endfor %}
+            </ul> 
+        </div>
+    </div>
+
+
+{% endblock %}

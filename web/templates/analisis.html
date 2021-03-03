@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Inversiones & Finanzas - Análisis{%endblock %}
+{% block meta_description %}A cambio de nuestra invaluable ayuda te pedimos una cooperación{% endblock %}
+
+{% block content %}
+
+
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'website/img/bg-img/33.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h1 class="title">Análisis de Empresas</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i>Inicio</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'service' %}"></i> Servicios</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Análisis</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+
+  <!-- ****** About Us Area Start ******* -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>Análisis de Empresas</h2>
+              <div class="line"></div>
+            </div>
+            <p>Hay miles de empresas en las cuales puedes invertir. Para adquirir sus acciones se debe ir a los mercados de valores. Las más famosas son el New York Stock Exchange, el NASDAQ, la bolsa de Londres, la bolsa de Shangái o la bolsa de Amsterdam.
+              Habiendo tantas empresas disponibles ¿Cómo elegir una? Estudiar a fondo una empresa es una tarea tediosa y muy larga. Estudiar y conocer un sector es una tarea todavía más hercúlea. Sabemos que no tienes tiempo para ello, por eso queremos ayudarte.
+              Saber en que estás invirtiendo tu dinero es primordial. Es por eso que ponemos a tu alcance los más exhaustivos diagnosticos de las empresas que tú nos pidas.</p>
+          
+            <!-- ***** Dento Pricing Table Area Start ***** -->
+      <br>
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">PRODUCTOS OFRECIDOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Registros financieros de 10 años)</th>
+                    <td>Análisis de los últimos 10 años de la empresa solicitada. Perfecto para reconocer la calidad de la empresa. </td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Registros financieros de 20 años)</th>
+                    <td>Una concisa investigación de los últimos 20 años para reconocer la calidad de la empresa.</td>
+                    <td>10$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Con valor intrínseco)</th>
+                    <td>Exhaustivo estudio de los pasados 10 años de la empresa. Conocer el valor intrínseco es idóneo para discernir una buena inversión.</td>
+                    <td>30$</td>
+                  </tr>
+                <thead>
+                  <tr>
+                    <th scope="col">SERVICIOS OFRECIDOS :</th>
+                    <th scope="col">INFORMACIÓN</th>
+                    <th scope="col">PRECIOS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Gestión de activos digitales</th>
+                    <td>Efectuamos la compra y la venta de los activos digitales que nos indiques.</td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Registros financieros de 10 años)</th>
+                    <td>Análisis de los últimos 10 años de la empresa solicitada. Perfecto para reconocer la calidad de la empresa. </td>
+                    <td>5$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Registros financieros de 20 años)</th>
+                    <td>Una concisa investigación de los últimos 20 años para reconocer la calidad de la empresa.</td>
+                    <td>10$</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Análisis de una empresa (Con valor intrínseco)</th>
+                    <td>Exhaustivo estudio de los pasados 10 años de la empresa. Conocer el valor intrínseco es idóneo para discernir una buena inversión.</td>
+                    <td>30$</td>
+                  </tr>                
+                <tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'appointment' %}" class="btn dento-btn">Pidelo Ya <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+{% endblock %}

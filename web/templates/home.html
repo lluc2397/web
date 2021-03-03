@@ -1,0 +1,565 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+  <!-- ***** Welcome Area Start ***** -->
+  <section class="welcome-area">
+    <!-- Welcome Slides -->
+    <div class="welcome-slides owl-carousel">
+      <!-- Single Welcome Slide -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'website/img/bg-img/invertirbolsademexico.jpg' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInUp" data-delay="100ms">Las fortunas se crean con activos no con dinero</h2>
+                <p data-animation="fadeInUp" data-delay="300ms">Nuestro objetivo principal es ayudarte a acumular activos</p>
+                <div class="welcome-btn-group">
+                  <a href="{% url 'service' %}" class="btn dento-btn mx-2" data-animation="fadeInUp" data-delay="500ms">Empieza ya</a>
+                  <a href="{% url 'appointment' %}" class="btn dento-btn mx-2 active" data-animation="fadeInUp" data-delay="700ms">Contáctanos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Single Welcome Slide -->
+      <div class="welcome-welcome-slide bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'website/img/bg-img/39.jpg' %});">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Welcome Text -->
+              <div class="welcome-text text-center">
+                <h2 data-animation="fadeInDown" data-delay="100ms">Queremos brindarte toda la ayuda y las herramientas necesarias para que nunca pierdas dinero</h2>
+                <p data-animation="fadeInDown" data-delay="300ms">Haz que tu dinero trabaje por ti</p>
+                <div class="welcome-btn-group">
+                  <a href="{% url 'pricing' %}" class="btn dento-btn mx-2" data-animation="fadeInDown" data-delay="500ms">Empieza ya</a>
+                  <a href="{% url 'appointment' %}" class="btn dento-btn mx-2 active" data-animation="fadeInDown" data-delay="700ms">Contáctanos</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Welcome Area End ***** -->
+
+  <!-- ****** About Us Area Start ******* -->
+  <section class="dento-about-us-area section-padding-100-0">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- About Us Thumbnail -->
+        <div class="col-12 col-md-6">
+          <div class="about-us-thumbnail mb-50">
+            <img src="{% static 'website/img/bg-img/objetivo_financiero.png' %}" alt="">
+          </div>
+        </div>
+        <!-- About Content -->
+        <div class="col-12 col-md-6">
+          <div class="about-us-content mb-50">
+            <!-- Section Heading -->
+            <div class="section-heading">
+              <h2>NUESTRO OBJETIVO</h2>
+              <div class="line"></div>
+            </div>
+            <p>Nuestro objetivo es simple, que todo el mundo sepa como aumentar su patrimonio. Para eso, responderemos a la pregunta: ¿Qué son las finanzas personales? Queremos transmitir las finanzas a los no financieros, terminar con la creencia que para hacer dinero hay que tener dinero. Si decides confiar en nosotros, te podemos garantizar que tú tendrás pleno control sobre tus finanzas personales, sabrás usar tu dinero inteligentemente y estarás a mitad de camino de amasar una fortuna. Si nos ayudas a ayudarte a conseguir tus objetivos estaremos cada vez más cerca de cumplir nuestro sueño. ¡Gracias!</p>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Valor aportado</h6>
+              <div id="bar1" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="94"></span>
+              </div>
+            </div>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Eficacia de las tácticas</h6>
+              <div id="bar2" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="96"></span>
+              </div>
+            </div>
+
+            <!-- Single Skills Area -->
+            <div class="single-skills-area mt-30">
+              <h6>Resultados garantizados</h6>
+              <div id="bar3" class="barfiller">
+                <span class="tip"></span>
+                <span class="fill" data-percentage="100"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ****** About Us Area End ****** -->
+
+  <div class="container">
+    <div class="dento-border clearfix"></div>
+  </div>
+
+  <!-- Cool Facts Area Start -->
+  <section class="dento-cta-area">
+    <div class="container">
+      <div class="row">
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="icon_heart_alt"></i>
+            <h2><span class="counter">20</span></h2>
+            <h5>Años ayudando</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class= "fa fa-money"></i>
+            <h2><span class="counter">1</span></h2>
+            <h5>Cantidad mínima para invertir</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="fa fa-btc"></i>
+            <h2>+<span class="counter">20</span></h2>
+            <h5>Diferentes activos por enseñar</h5>
+          </div>
+        </div>
+
+        <!-- Cool Facts Area -->
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="single-cta text-center mt-50 mb-100">
+            <i class="fa fa-road"></i>
+            <h2>+<span class="counter">100</span></h2>
+            <h5>Años de conocimiento</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cool Facts Area End -->
+
+  <!-- Servicios financieros Area Start -->
+  <section class="dento-service-area section-padding-100-0 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/invertirenbolsa.jpg' %}');">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Service Content -->
+        <div class="col-12 col-lg-6">
+          <div class="service-content mb-30">
+            <!-- Section Heading -->
+            <div class="section-heading white">
+              <h2>CÓMO TE AYUDAMOS</h2>
+              <div class="line"></div>
+            </div>
+
+            <div class="row">
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <a href="{% url 'blog' %}"><img src="{% static 'website/img/core-img/blog_inversiones.png' %}" alt="">
+                  <h6>Blog sobre inversiones</h6></a>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <a href="{% url 'asesoramiento' %}"><img src="{% static 'website/img/core-img/consulta_inversiones.png' %}" alt="">
+                  <h6>Consultas personalizadas</h6></a>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <a href="{% url 'asesoramiento' %}"><img src="{% static 'website/img/core-img/resultados_positivos.png' %}" alt="">
+                  <h6>Mejora tu estrategia de inversión</h6></a>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">                   
+                    <a href="{% url 'cursos' %}"><img src="{% static 'website/img/core-img/cursos_finanzas.png' %}">
+                    <h6>Cursos a tu medida</h6></a>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <a href="{% url 'analisis' %}"><img src="{% static 'website/img/core-img/analisis_de_empresas.png' %}" alt="">
+                  <h6>Los análisis más exhaustivos de empresas </h6></a>
+                </div>
+              </div>
+
+              <!-- Single Service -->
+              <div class="col-6 col-md-4">
+                <div class="single-service mb-70">
+                  <a href="{% url 'noticias' %}"><img src="{% static 'website/img/core-img/noticias.png' %}" alt="">
+                  <h6>Todas las noticias relevantes a tu alcance</h6></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Area -->
+        <div class="col-12 col-lg-6">
+          <div class="dento-video-area mb-100">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mQSnD-RaWFA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Dento Service Area End -->
+
+  <!-- Dento Pricing Table Area Start -->
+  <section class="dento-pricing-table-area section-padding-100">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>NUESTROS SERVICIOS & PRODUCTOS</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">SERVICIOS & PRODUCTOS :</th>
+                  <th scope="col">INFORMACIÓN</th>
+                  <th scope="col">PRECIOS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><a href="{% url 'cursos' %}">Campus del inversor inteligetne</a></th>
+                  <td>Asiste a clases particulares, obtén acceso a cursos y a la más exclusiva comunidad de inversores.</td>
+                  <td>Próximamente</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="{% url 'asesoramiento' %}">Asesoramiento personalizado</a></th>
+                  <td>Te acompañanos el tiempo que necesites para conseguir todas tus metas.</td>
+                  <td>Pago mensual</td>
+                </tr>
+                <tr>
+                  <th scope="row"><a href="{% url 'analisis' %}">Análisis de empresas</a></th>
+                  <td>Los mejores y más exhaustivos estudios de emrpesas. Más de 100 años de información selecta sobre todas las empresas.</td>
+                  <td>Pagos punctuales o menusales</td>
+                </tr>
+                <tr>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="more-btn text-center mt-50">
+            <a href="{% url 'pricing' %}" class="btn dento-btn">Más Información <i class="fa fa-angle-double-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Dento Pricing Table Area End -->
+
+  <!-- Book An Oppointment Area Start -->
+  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/invertirenvalor.jpg' %}');">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+            <h2>PIDE NUESTROS SERVICIOS</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Appointment Form -->
+        {% if your_name %}
+            <center>
+              <h2>Gracias {{ your_name }}!</h2>
+              <p>Hemos recibido su correo, le contestaremos en la mayor brevedad...</p>
+            </center>
+            <br/><br/><br/>
+        {% else %}
+          <div class="appointment-form">
+            <form action="{% url 'appointment' %}" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-name" class="form-control" placeholder="Nombre" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-phone" class="form-control" placeholder="Teléfono" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="email" name="your-email" class="form-control" placeholder="Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-country" class="form-control" placeholder="País">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <select name="your-service" class="form-control">
+                      <option value="Servicios Financieros">Servicio deseado</option>
+                      <option value="Curso financiero">Cursos</option>
+                      <option value="Talleres financiero">Talleres</option>
+                      <option value="Campus finanzas personales">Campus del inversor inteligente</option>
+                      <option value="Asesoramiento financiero">Asesoramiento</option>
+                      <option value="Análisis fundamental de empresas">Análisis de empresas</option>
+                      <option value="Consulta financiera">Consultas</option>
+                      <option value="Activos digitales">Activos Digitales</option>
+                      <option value="Otro servicio financiero">Otro (Especificar en el mensaje)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <select name="your-payment" class="form-control">
+                      <option value="Método de pago">Métodos de pago</option>
+                      <option value="Un solo pago">Un solo pago</option>
+                      <option value="Mensual">Mensual</option>
+                      <option value="Anual">Anual</option>
+                      <option value="Otra modalidad">Otra (Especificar en el mensaje)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-30">
+                    <textarea name="your-message" class="form-control" placeholder="Tú mensaje"></textarea>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn dento-btn">ENVIAR</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Book An Oppointment Area End -->
+
+  <!-- ***** Dento Dentist Area Start ***** -->
+  <section class="dentist-area section-padding-100-0">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>NUESTRO PERSONAL</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">        
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="single-dentist-area mb-100">
+            <img src="{% static 'website/img/bg-img/10.png' %}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>Michael Barley</h5>
+                <p>Implant Expert</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Single Dentist Area -->
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="single-dentist-area mb-100">
+            <img src="{% static 'website/img/bg-img/11.png' %}" alt="">
+            <!-- Dentist Content -->
+            <div class="dentist-content">
+              <!-- Social Info -->
+              <div class="dentist-social-info">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+              <!-- Dentist Info -->
+              <div class="dentist-info bg-gradient-overlay">
+                <h5>Michael Barley</h5>
+                <p>Implant Expert</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Dento Dentist Area End ***** -->
+
+  <!-- ***** Testimonials Area Start ***** -->
+  <section class="testimonials-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'website/img/bg-img/invertirenacciones.jpg' %}');">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- Testimonials Slides -->
+          <div class="testimonials-slides owl-carousel">
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/sir_john_templeton.jpg' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“El momento de máximo pesimismo es el mejor para comprar y el momento de máximo optimismo es el mejor para vender.”</h5>
+                <h6>Sir John Templeton</h6>
+                <p></p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/Charlie_Munger.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“Toda inversión inteligente es value investing, adquirir más de lo que estás pagando. Usted debe valorar el negocio con el fin de valorar las acciones.”</h5>
+                <h6>Charlie Munger</h6>
+                <p></p>
+              </div>
+            </div>
+
+            <!-- Single Testimonials Slide -->
+            <div class="single-testimonial-slide d-flex align-items-center">
+              <!-- Thumbnail -->
+              <div class="testimonial-thumb">
+                <img src="{% static 'website/img/bg-img/Bil_Ackman.png' %}" alt="">
+              </div>
+              <!-- Content -->
+              <div class="testimonial-content">
+                <h5>“El pronóstico económico y de mercado a corto plazo es en gran medida una tarea de tontos: invertimos de acuerdo con una estrategia que hace que la necesidad de confiar en las evaluaciones económicas o de mercado a corto plazo sea en gran parte irrelevante.”</h5>
+                <h6>Bill Ackman</h6>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Testimonials Area End ***** -->
+
+  <!-- ***** Blog Area Start ***** -->
+  <section class="dento-blog-area section-padding-100-0 clearfix">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center">
+            <h2>ARTÍCULOS RECIENTES</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <!-- Single Blog Item -->
+        {% for post in object_list %}            
+          <div class="col-12 col-md-6 col-lg-4">
+              <div class="single-blog-item mb-100">
+                <a href="{% url 'publicaciones' post.pk %}">
+                  {% if post.image %}
+                  <img src="{{ post.image.url }}">
+                {% endif %}
+                </a>
+                <!-- Blog Content -->
+                <div class="blog-content">
+                  <a href="{% url 'publicaciones' post.pk %}" class="post-title">{{ post.title}}</a>
+                  <!-- <p><small> - {{ post.author.first_name}} {{ post.author.last_name}}</small> <br/>-->
+                  <p><small> - {{ post.author.username}}</small> <br/>  
+                      {{ post.resumen|safe }}</li>  </p>
+                  <div class="post-meta">
+                    <a href="{% url 'publicaciones' post.pk %}"><i class="icon_clock_alt"></i> {{post.post_date}}</a>
+                    <!--<a href="#"><i class="icon_chat_alt"></i> 3 Comments</a>-->
+                  </div>
+                </div>
+              </div>
+          </div>
+        {% endfor %}
+        <div class="full-width d-flex justify-content-center">
+          {% if is_paginated %}
+              {% if page_obj.has_previous %}
+                  <a class="btn btn-sm btn-outline-secondary mb-4 mr-2"
+                          href="?page=1">Primero</a>
+                  <a class="btn btn-sm btn-outline-secondary mb-4 mr-2"
+                          href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+              {% endif %}
+
+              {% for num in page_obj.paginator.page_range %}
+                  {% if page_obj.number == num %}
+                      <a class="btn btn-sm btn-info mb-4 mr-2"
+                          href="?page={{ num }}">{{ num }}</a>
+                  {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                      <a class="btn btn-sm btn-outline-secondary mb-4 mr-2"
+                          href="?page={{ num }}">{{ num }}</a>
+                  {% endif %}
+              {% endfor %}
+
+              {% if page_obj.has_next %}
+                  <a class="btn btn-sm btn-outline-secondary mb-4 mr-2"
+                          href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+                     <a class="btn btn-sm btn-outline-secondary mb-4 mr-2"
+                      href="?page={{ page_obj.paginator.num_pages }}">Último</a>
+              {% endif %}
+          {% endif %}
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Blog Area End ***** -->
+
+ 
+ {% endblock %}

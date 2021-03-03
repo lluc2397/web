@@ -1,0 +1,60 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load humanize %}
+{% block title %} Cursos {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="main-content-container container-fluid px-4">
+    <div class="main-content-container container-fluid px-4">
+        <!-- Page Header -->
+        <div class="page-header row no-gutters py-4">
+          <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+            <span class="text-uppercase page-subtitle">Cursos</span>
+            <h3 class="page-title">{{curso_selec.titulo}}</h3>
+          </div>
+        </div>
+        <!-- End Page Header -->    
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center white">
+                    <h1><strong>Módulos de : {{curso_selec.titulo}}</strong></h1>
+                <div class="line"></div>
+            </div>
+            {% for modulo in modulos_curso %}  
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="card card-small card-post mb-4">
+                          <div class="card-body">
+                            <h5 class="card-title">
+                              <a href="{% url 'Modulos' modulo.pk%}">{{modulo.nombre_modulo}}</a>
+                            </h5>
+                            <p class="card-text text-muted"> {{modulo.contenido_modulo|slice:":200"|safe}}</p>
+                          </div>
+                          <div class="card-footer border-top d-flex">
+                            <div class="card-post__author d-flex">
+                              <div class="d-flex flex-column justify-content-center ml-3">
+                                <span class="card-post__author-name"> <small> Última actualización : <br> {{modulo.curso_relacionado}}</small></span>
+                              </div>
+                            </div>
+                            <div class="my-auto ml-auto"></div>
+                            <div class="custom-control custom-toggle custom-toggle-sm mb-1">
+                              <small class="text-muted">Publicación : 21 March 2011</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>          
+              {% endfor %}
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
